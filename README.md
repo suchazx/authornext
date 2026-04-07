@@ -1,0 +1,2 @@
+# authornext
+Launch aspiring authors.
