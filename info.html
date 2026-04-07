@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AuthorNext Info</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+* { box-sizing:border-box; margin:0; padding:0; font-family:'Roboto',sans-serif;}
+body { line-height:1.6; color:#333; scroll-behavior: smooth; }
+
+/* COLORS */
+:root {
+    --primary-color: #3a5a40;
+    --secondary-color: #1a1a1a;
+    --accent-color: #6b8c7c;
+    --text-light: #fff;
+    --text-dark: #111;
+}
+
+/* BACKGROUND OVERLAY */
+body {
+    background: linear-gradient(rgba(191,127,127,0.7), rgba(191,127,127,0.7)), url('https://via.placeholder.com/1920x1080') center/cover no-repeat;
+}
+
+/* NAVIGATION */
+nav { display:flex; justify-content:space-between; align-items:center; padding:15px 30px; background-color: var(--secondary-color); flex-wrap:wrap; position:sticky; top:0; z-index:1000; }
+nav a { color: var(--text-light); text-decoration:none; margin-left:20px; font-weight:500; font-size:0.95rem; transition:0.3s; }
+nav a:hover { color: var(--accent-color); }
+.logo a { font-size:1.5rem; font-weight:700; color:var(--text-light); }
+.gst-number { color:#fff; font-size:0.95rem; margin-left:20px; font-weight:500; }
+
+/* SECTIONS */
+section { padding:80px 20px; max-width:900px; margin:0 auto; background-color: rgba(255,255,255,0.85); border-radius: 10px; margin-bottom:40px; }
+section h2 { font-size:2rem; margin-bottom:20px; color: var(--primary-color); }
+section p { font-size:1.05rem; margin-bottom:15px; }
+section ul { padding-left: 25px; margin-bottom: 15px; }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    section { padding:60px 15px; }
+}
+@media (max-width: 480px) {
+    section h2 { font-size:1.7rem; }
+    section p { font-size:0.95rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+    <div class="logo"><a href="index.html">AuthorNext</a></div>
+    <div class="gst-number">GST: 29ABCDE1234F1Z5</div>
+    <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<!-- ABOUT SECTION -->
+<section id="about">
+    <h2>About AuthorNext</h2>
+    <p>AuthorNext helps authors gain recognition, credibility, and income through hassle-free publishing. Our team ensures your debut book gets maximum visibility and professional presentation.</p>
+    <p>We focus on creating a strong author brand, mentoring new authors, and providing marketing support to elevate your presence globally.</p>
+</section>
+
+<!-- SERVICES SECTION -->
+<section id="services">
+    <h2>Our Services</h2>
+    <p>We offer complete end-to-end publishing solutions including:</p>
+    <ul>
+        <li>Book Writing & Editing</li>
+        <li>Professional Formatting & Design</li>
+        <li>Marketing & Promotions</li>
+        <li>Global Distribution</li>
+        <li>Mentorship & Author Guidance</li>
+    </ul>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: support@authornext.com</p>
+    <p>Phone: +91-9876543210</p>
+    <p>Address: 123 Author Street, Hyderabad, India</p>
+</section>
+
+</body>
+</html>
