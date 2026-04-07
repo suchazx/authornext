@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AuthorNext - From Ordinary to Extraordinary</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Roboto', sans-serif; }
+body { line-height: 1.6; background-color: #fdfdfd; color: #333; }
+
+/* COLORS */
+:root {
+    --primary-color: #3a5a40;
+    --secondary-color: #1a1a1a;
+    --accent-color: #6b8c7c;
+    --text-light: #fff;
+    --text-dark: #111;
+}
+
+/* NAVIGATION */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: var(--secondary-color);
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+nav a { color: var(--text-light); text-decoration: none; margin-left: 20px; font-weight: 500; font-size: 0.95rem; transition: 0.3s; }
+nav a:hover { color: var(--accent-color); }
+.logo a { font-size: 1.5rem; font-weight: 700; color: var(--text-light); }
+
+/* GST NUMBER */
+.gst-number {
+    color: #fff;
+    font-size: 0.95rem;
+    margin-left: 20px;
+    font-weight: 500;
+}
+
+/* HERO */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 90vh;
+    background-color: var(--primary-color);
+    background-image: url('https://via.placeholder.com/1920x800');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(191,127,127,0.7);
+    z-index: 1;
+}
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    width: 90%;
+    padding: 30px 25px;
+    border-radius: 10px;
+    color: var(--text-light);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s forwards;
+}
+.hero h1 { 
+    font-size: 2.5rem; 
+    margin-bottom: 10px;
+    color: var(--text-light);
+}
+.hero p { 
+    font-size: 1.1rem; 
+    margin-bottom: 25px; 
+    text-align: center;
+    color: var(--text-light);
+}
+.hero button {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    border: none;
+    padding: 14px 35px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s transform, 0.3s box-shadow, 0.3s background-color;
+}
+.hero button:hover {
+    background-color: var(--accent-color);
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* HIGHLIGHT BOXES */
+.highlights {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 60px 20px;
+    gap: 20px;
+}
+.highlight {
+    background-color: #f0f7f3;
+    border-left: 5px solid var(--accent-color);
+    padding: 20px 15px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    font-size: 1rem;
+    color: var(--text-dark);
+    flex: 1 1 auto;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+/* BENEFITS LIST */
+.benefits {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+.benefits h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--primary-color);
+}
+.benefits ul {
+    list-style-type: disc;
+    padding-left: 25px;
+}
+.benefits ul li {
+    margin-bottom: 12px;
+    font-size: 1rem;
+    color: var(--text-dark);
+}
+
+/* CTA SECTION */
+.cta-section {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1s 0.5s forwards;
+}
+.cta-section h2 { font-size: 1.8rem; margin-bottom: 20px; color: var(--primary-color); }
+/* CTA button linked to payment page */
+.cta-section a button {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border: none;
+    padding: 14px 35px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s transform, 0.3s box-shadow, 0.3s background-color;
+}
+.cta-section a button:hover {
+    background-color: var(--accent-color);
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* FOOTER */
+footer {
+    background-color: #111;
+    color: #ccc;
+    text-align: center;
+    padding: 25px 15px;
+    font-size: 0.9rem;
+}
+footer a { color: var(--accent-color); text-decoration: none; margin: 0 8px; }
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2rem; }
+    .hero p { font-size: 1rem; }
+    nav { flex-direction: row; flex-wrap: wrap; }
+    nav .nav-links { display: flex; flex-wrap: wrap; width: 100%; justify-content: space-between; margin-top: 10px; }
+    nav .nav-links a { flex: 0 0 48%; margin: 5px 0 0 0; text-align: center; }
+    .highlights { flex-direction: column; align-items: center; padding: 40px 10px; }
+}
+@media (max-width: 480px) {
+    .hero h1 { font-size: 1.7rem; }
+    .hero p { font-size: 0.95rem; }
+    .hero button, .cta-section button { padding: 12px 25px; font-size: 0.95rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+    <div class="logo"><a href="#">AuthorNext</a></div>
+    <div class="gst-number">GST: 29ABCDE1234F1Z5</div>
+    <div class="nav-links">
+        <a href="info.html#about">About</a>
+        <a href="info.html#services">Services</a>
+        <a href="info.html#contact">Contact</a>
+        <a href="#">Home</a>
+    </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>From Ordinary to Extraordinary: Launch Your Legacy</h1>
+        <p>AuthorNext helps authors get recognition, income, and professional credibility in a hassle-free way.</p>
+        <button>Get Started</button>
+    </div>
+</section>
+
+<!-- HIGHLIGHT BOXES -->
+<section class="highlights">
+    <div class="highlight">✅ For your debut book, absolutely no exertion is required — our team crafts it expertly while your name takes the spotlight.</div>
+    <div class="highlight">❄️ Subsequent works ride the momentum of the first, creating a magnificent snowball effect that amplifies your recognition and reach.</div>
+    <div class="highlight">⏱️ Your time remains yours; everything else flows seamlessly on autopilot, requiring only your approval at key stages.</div>
+    <div class="highlight">Gulf nations and global markets place greater value on recognized authors than inexperienced freshers, opening unparalleled professional doors.</div>
+    <div class="highlight">Unlock a sophisticated passive income stream that grows quietly yet powerfully alongside your publishing journey.</div>
+    <div class="highlight">Receive elite mentorship and guidance from seasoned authors and publishing authorities, elevating your craft to the highest standards.</div>
+</section>
+
+<!-- BENEFITS LIST -->
+<section class="benefits">
+    <h2>Why AuthorNext Works For You</h2>
+    <ul>
+        <li>Name & Personal Branding</li>
+        <li>Promotion in Office / Social Recognition</li>
+        <li>Professional Credibility & Recognition</li>
+        <li>Income & Passive Revenue</li>
+        <li>Hassle-Free Publishing Process</li>
+        <li>Marketing Tools & Reach</li>
+        <li>Community Support & Feedback</li>
+        <li>Professional Guidance & Mentorship</li>
+        <li>Skill Enhancement</li>
+        <li>Portfolio & Legacy Creation</li>
+        <li>Stress Reduction & Confidence Boost</li>
+    </ul>
+</section>
+
+<!-- CTA SECTION -->
+<section class="cta-section">
+    <h2>Ready to Take Your Book to the World?</h2>
+    <a href="payment.html">
+        <button>Join AuthorNext Now</button>
+    </a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    &copy; 2026 AuthorNext. All Rights Reserved. |
+    <a href="#">Privacy</a> |
+    <a href="#">Terms</a>
+</footer>
+
+<script>
+// Scroll animations for highlights
+const highlights = document.querySelectorAll('.highlight');
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, { threshold: 0.2 });
+highlights.forEach(h => observer.observe(h));
+</script>
+
+</body>
+</html>
