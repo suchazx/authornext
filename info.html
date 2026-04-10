@@ -24,25 +24,144 @@ body {
 }
 
 /* NAVIGATION */
-nav { display:flex; justify-content:space-between; align-items:center; padding:15px 30px; background-color: var(--secondary-color); flex-wrap:wrap; position:sticky; top:0; z-index:1000; }
-nav a { color: var(--text-light); text-decoration:none; margin-left:20px; font-weight:500; font-size:0.95rem; transition:0.3s; }
-nav a:hover { color: var(--accent-color); }
-.logo a { font-size:1.5rem; font-weight:700; color:var(--text-light); }
-.gst-number { color:#fff; font-size:0.95rem; margin-left:20px; font-weight:500; }
+nav {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 30px;
+    background-color: var(--secondary-color);
+    flex-wrap:wrap;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+nav a {
+    color: var(--text-light);
+    text-decoration:none;
+    margin-left:20px;
+    font-weight:500;
+    font-size:0.95rem;
+    transition:0.3s;
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+/* LOGO SECTION */
+.logo a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size:1.5rem;
+    font-weight:700;
+    color:var(--text-light);
+}
+
+.logo img {
+    width: 120px;
+    height: 80px;
+    display: block;
+}
+
+.gst-number {
+    color:#fff;
+    font-size:0.95rem;
+    margin-left:20px;
+    font-weight:500;
+}
 
 /* SECTIONS */
-section { padding:80px 20px; max-width:900px; margin:0 auto; background-color: rgba(255,255,255,0.85); border-radius: 10px; margin-bottom:40px; }
-section h2 { font-size:2rem; margin-bottom:20px; color: var(--primary-color); }
-section p { font-size:1.05rem; margin-bottom:15px; }
-section ul { padding-left: 25px; margin-bottom: 15px; }
+section {
+    padding:80px 20px;
+    max-width:900px;
+    margin:0 auto;
+    background-color: rgba(255,255,255,0.85);
+    border-radius: 10px;
+    margin-bottom:40px;
+}
+
+section h2 {
+    font-size:2rem;
+    margin-bottom:20px;
+    color: var(--primary-color);
+}
+
+section p {
+    font-size:1.05rem;
+    margin-bottom:15px;
+}
+
+section ul {
+    padding-left: 25px;
+    margin-bottom: 15px;
+}
+
+section li {
+    margin-bottom: 12px;
+    line-height: 1.7;
+}
+
+/* CONTACT MESSAGE */
+.contact-message {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 25px;
+    font-style: italic;
+    text-align: left;
+}
+
+/* FORM STYLES */
+form {
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+form input,
+form textarea {
+    padding:10px;
+    border-radius:5px;
+    border:1px solid #ccc;
+    font-size:1rem;
+    width:100%;
+}
+
+form textarea {
+    resize:vertical;
+    min-height:100px;
+}
+
+form button {
+    padding:12px;
+    border:none;
+    border-radius:5px;
+    background-color: var(--primary-color);
+    color:#fff;
+    font-size:1rem;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+form button:hover {
+    background-color: var(--accent-color);
+}
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
     section { padding:60px 15px; }
 }
+
 @media (max-width: 480px) {
     section h2 { font-size:1.7rem; }
     section p { font-size:0.95rem; }
+    
+    .logo img {
+        width: 32px;
+        height: 32px;
+    }
 }
 </style>
 </head>
@@ -50,9 +169,17 @@ section ul { padding-left: 25px; margin-bottom: 15px; }
 
 <!-- NAVIGATION -->
 <nav>
-    <div class="logo"><a href="index.html">AuthorNext</a></div>
+    <div class="logo">
+        <a href="index.html">
+            <img src="logo.png" alt="AuthorNext Logo">
+            AuthorNext
+        </a>
+    </div>
+    
     <div class="gst-number">GST: 29ABCDE1234F1Z5</div>
+    
     <div class="nav-links">
+        <a href="index.html">Home</a>
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#contact">Contact</a>
@@ -62,29 +189,72 @@ section ul { padding-left: 25px; margin-bottom: 15px; }
 <!-- ABOUT SECTION -->
 <section id="about">
     <h2>About AuthorNext</h2>
-    <p>AuthorNext helps authors gain recognition, credibility, and income through hassle-free publishing. Our team ensures your debut book gets maximum visibility and professional presentation.</p>
-    <p>We focus on creating a strong author brand, mentoring new authors, and providing marketing support to elevate your presence globally.</p>
+
+    <p>
+        AuthorNext helps authors gain recognition, credibility, and income through hassle-free publishing. Our team ensures your debut book gets maximum visibility and professional presentation.
+    </p>
+
+    <p>
+        We focus on creating a strong author brand, mentoring new authors, and providing marketing support to elevate your presence globally.
+    </p>
+
+    <p>
+        Beyond publication, a well-crafted book serves as a powerful instrument of distinction—enhancing personal recognition, strengthening professional credibility, and often opening doors to elevated career opportunities.
+    </p>
+
+    <p>
+        A published voice naturally attracts invitations to seminars, panel discussions, podcasts, literary forums, and intellectual gatherings.
+    </p>
+
+    <p>
+        At AuthorNext, discretion is held in the highest regard with a strict 100% privacy policy.
+    </p>
 </section>
 
 <!-- SERVICES SECTION -->
 <section id="services">
     <h2>Our Services</h2>
-    <p>We offer complete end-to-end publishing solutions including:</p>
+
+    <p>
+        We offer a comprehensive, end-to-end publishing and author elevation ecosystem, meticulously designed to transform your ideas into a distinguished literary and professional asset.
+    </p>
+
     <ul>
-        <li>Book Writing & Editing</li>
-        <li>Professional Formatting & Design</li>
-        <li>Marketing & Promotions</li>
-        <li>Global Distribution</li>
-        <li>Mentorship & Author Guidance</li>
+        <li>Specialized engagement of highly skilled ghostwriters, carefully matched to your subject domain, industry, voice, and intended audience</li>
+        
+        <li>Professional manuscript editing, proofreading, and formatting executed in strict accordance with international publishing standards, literary conventions, and global submission requirements</li>
+        
+        <li>Strategic pre-launch publicity campaigns crafted to build anticipation, market visibility, and premium personal brand positioning prior to release</li>
+        
+        <li>Exclusive book cover conceptualization and design by our experienced graphic design team, ensuring a visually compelling and market-ready presentation</li>
+        
+        <li>Precision-driven social media advertising campaigns with continuous performance monitoring, audience optimization, and profitability-focused ad management</li>
+        
+        <li>Activation and management of an established distribution network to maximize reach across relevant markets, readership segments, and professional circles</li>
+        
+        <li>Dedicated mentorship and strategic author guidance throughout every phase of conceptualization, development, launch, and post-publication growth</li>
     </ul>
+
+    <p>
+        Every service is delivered with absolute discretion, strategic foresight, and an unwavering commitment to excellence—ensuring that your book becomes not merely a publication, but a lasting instrument of influence, recognition, and prestige.
+    </p>
 </section>
 
 <!-- CONTACT SECTION -->
 <section id="contact">
     <h2>Contact Us</h2>
-    <p>Email: support@authornext.com</p>
-    <p>Phone: +91-9876543210</p>
-    <p>Address: 123 Author Street, Hyderabad, India</p>
+
+    <p class="contact-message">
+        We would be delighted to hear from you. Kindly fill in the form below, and our dedicated team shall respond to your enquiry within the next 4 working hours with the utmost care and attention.
+    </p>
+
+    <form action="#" method="post">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="tel" name="phone" placeholder="Your Phone" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
 </section>
 
 </body>
