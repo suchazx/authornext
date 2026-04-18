@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recommended Books | AuthorNext</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    background:#bf7f7f;
+}
+
+h1{
+    text-align:center;
+    padding:20px;
+    color:#333;
+}
+
+/* GRID */
+.container{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap:25px;
+    padding:20px;
+}
+
+/* BOOK CARD */
+.book{
+    background:#fff;
+    padding:15px;
+    border-radius:10px;
+    text-align:center;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.book:hover{
+    transform:translateY(-5px);
+    box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+
+.book img{
+    width:100%;
+    height:280px;
+    object-fit:contain;
+    background:#fff;
+    border-radius:6px;
+
+}
+
+/* TEXT */
+.book p{
+    margin:10px 0;
+    font-weight:bold;
+    font-size:0.95rem;
+}
+
+/* PRICE */
+.price{
+    color:#b12704;
+    font-weight:bold;
+    margin-bottom:8px;
+}
+
+/* RATING */
+.rating{
+    color:#f0c14b;
+    margin-bottom:10px;
+}
+
+/* BUTTON */
+.book button{
+    padding:10px;
+    width:100%;
+    background:#1a1a1a;
+    color:#fff;
+    border:none;
+    cursor:pointer;
+    border-radius:5px;
+    transition:0.3s;
+}
+
+.book button:hover{
+    background:#6b8c7c;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Top Books for Aspiring Authors</h1>
+
+<div class="container">
+
+    <div class="book">
+        <img src="https://m.media-amazon.com/images/I/61Nw8A7dYBL._SL1500_.jpg">
+        <p>Your Actions Define Your Existence</p>
+        <div class="rating">★★★★★</div>
+        <div class="price">₹299</div>
+        <a href="https://amzn.to/4dUCVvf" target="_blank">
+            <button>Buy on Amazon</button>
+        </a>
+    </div>
+
+    <div class="book">
+        <img src="https://m.media-amazon.com/images/I/71XEsXS5RlL._SL1500_.jpg">
+        <p>The Psychology of Money</p>
+        <div class="rating">★★★★★</div>
+        <div class="price">₹399</div>
+        <a href="https://amzn.to/4sEQBy4" target="_blank">
+            <button>Buy on Amazon</button>
+        </a>
+    </div>
+
+    <div class="book">
+        <img src="https://m.media-amazon.com/images/I/81fqWc6aiGL._SL1500_.jpg">
+        <p>Human Edge in the AI Age</p>
+        <div class="rating">★★★★☆</div>
+        <div class="price">₹499</div>
+        <a href="https://amzn.to/485XYHz" target="_blank">
+            <button>Buy on Amazon</button>
+        </a>
+    </div>
+
+</div>
+
+</body>
+</html>
