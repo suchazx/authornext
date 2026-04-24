@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AuthorNext Info</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+* { box-sizing:border-box; margin:0; padding:0; font-family:'Roboto',sans-serif;}
+body { line-height:1.6; color:#333; scroll-behavior: smooth; }
+
+/* COLORS */
+:root {
+    --primary-color: #3a5a40;
+    --secondary-color: #1a1a1a;
+    --accent-color: #6b8c7c;
+    --text-light: #fff;
+    --text-dark: #111;
+}
+
+/* BACKGROUND */
+body {
+    background: linear-gradient(rgba(191,127,127,0.7), rgba(191,127,127,0.7)), url('https://via.placeholder.com/1920x1080') center/cover no-repeat;
+}
+
+/* NAV */
+nav {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 30px;
+    background-color: var(--secondary-color);
+    position:sticky;
+    top:0;
+}
+
+nav a {
+    color:#fff;
+    margin-left:20px;
+    text-decoration:none;
+}
+
+/* SECTIONS */
+section {
+    padding:80px 20px;
+    max-width:900px;
+    margin:0 auto 40px;
+    background:rgba(255,255,255,0.85);
+    border-radius:10px;
+}
+
+/* FORM */
+form { display:flex; flex-direction:column; gap:15px; }
+form input, form textarea {
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+form button {
+    padding:12px;
+    background:var(--primary-color);
+    color:#fff;
+    border:none;
+    cursor:pointer;
+}
+
+/* FOOTER */
+footer {
+    background:#111;
+    color:#ccc;
+    text-align:center;
+    padding:20px;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div>AuthorNext</div>
+    <div>
+        <a href="index.html">Home</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+
+    <form id="leadForm">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="tel" name="phone" placeholder="Your Phone" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+<footer>
+    © 2026 AuthorNext
+</footer>
+
+<script>
+const form = document.getElementById("leadForm");
+
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const name = form.name.value;
+    const phone = form.phone.value;
+    const email = form.email.value;
+    const messageField = form.message.value;
+
+    const data = { name, email, phone, message: messageField };
+
+    fetch("https://script.google.com/macros/s/AKfycbzgsaXqgCpnBaNm7OUaQOsiJ91gQVpV1R4oCFz1Ypky-KI9ldAqTo5mhs9VBR8ENr9MMg/exec", {
+        method: "POST",
+        body: JSON.stringify(data)
+    })
+    .then(res => res.json())
+    .then(response => {
+
+        // 🔥 WhatsApp message
+        const message = `Hi AuthorNext,
+
+I just submitted a request on your website.
+
+Name: ${name}
+Phone: ${phone}
+
+I am interested in publishing my book. Please guide me.`;
+
+        const encodedMessage = encodeURIComponent(message);
+
+        const whatsappURL = `https://wa.me/919347984431?text=${encodedMessage}`;
+
+        // Redirect to WhatsApp
+        window.location.href = whatsappURL;
+
+        form.reset();
+    })
+    .catch(error => {
+        alert("❌ Error submitting form. Please try again.");
+        console.error(error);
+    });
+});
+</script>
+
+</body>
+</html>
