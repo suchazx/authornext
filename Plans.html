@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AuthorNext | Pricing Plans</title>
+
+  <style>
+    * { 
+      box-sizing: border-box; 
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #bf7f7f;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    :root{
+      --primary-color:#3a5a40;
+      --secondary-color:#1a1a1a;
+      --accent-color:#6b8c7c;
+    }
+
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:15px 30px;
+      background:var(--secondary-color);
+      color:#fff;
+      flex-wrap:wrap;
+    }
+
+    nav a{
+      color:#fff;
+      text-decoration:none;
+      margin-left:20px;
+      font-size:0.95rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 50px;
+      color: #fff;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #f5f5f5;
+    }
+
+    .plans {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
+
+    .plan-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      border: 1px solid #eee;
+    }
+
+    .plan-card h2 {
+      font-size: 28px;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+
+    .price-box {
+      margin: 20px 0;
+      padding: 18px;
+      border: 2px solid #e5e5e5;
+      border-radius: 12px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      background: #fafafa;
+    }
+
+    .features {
+      padding-left: 20px;
+      margin: 20px 0;
+    }
+
+    .features li{
+      margin-bottom: 10px;
+    }
+
+    .pay-btn {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      cursor: pointer;
+      background: #111;
+      color: white;
+    }
+
+    .pay-btn:hover{
+      background: var(--primary-color);
+    }
+
+    /* SUCCESS BOX */
+    .success-box{
+      display:none;
+      text-align:center;
+      margin-top:40px;
+      padding:30px;
+      background:#fff;
+      border-radius:12px;
+      box-shadow:0 6px 20px rgba(0,0,0,0.1);
+    }
+
+    .success-box h2{
+      color:green;
+      margin-bottom:10px;
+    }
+
+    /* =========================
+       FULL-WIDTH TRUST STRIP
+    ========================== */
+    .payment-trust-strip{
+      width: 100%;
+      background:#fff;
+      border-top:1px solid #eaeaea;
+      border-bottom:1px solid #eaeaea;
+      padding: 18px 0;
+      margin-top: 60px;
+    }
+
+    .payment-inner{
+  max-width: 1200px;
+  margin: 0 auto;
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+  align-items:center;
+  gap:30px;
+  flex-wrap:wrap;
+}
+
+    .secure-text{
+  font-size: 12px;
+  letter-spacing: 1px;
+  color:#777;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+    .payment-logos{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:50px;
+      flex-wrap:wrap;
+    }
+
+    .payment-logos img{
+      height: 28px;
+      width: auto;
+      object-fit: contain;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+      opacity: 0.85;
+    }
+
+    .payment-logos img:hover{
+      transform: scale(1.08);
+      opacity: 1;
+    }
+
+    footer{
+      background:#111;
+      color:#ccc;
+      text-align:center;
+      padding:25px 15px;
+      margin-top:0;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div><strong>AuthorNext</strong></div>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="info.html#about">About</a>
+      <a href="info.html#services">Services</a>
+      <a href="info.html#contact">Contact</a>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <section class="hero">
+      <h1>Choose Your AuthorNext Plan</h1>
+      <p>Select the plan that best fits your journey</p>
+    </section>
+
+    <section class="plans">
+
+      <div class="plan-card">
+        <h2>Aspiring Authors</h2>
+        <div class="price-box">₹2,999</div>
+        <ul class="features">
+          <li>Publishing guidance</li>
+          <li>Formatting support</li>
+          <li>Author branding</li>
+        </ul>
+        <button class="pay-btn" onclick="pay('plan1')">Pay Now</button>
+      </div>
+
+      <div class="plan-card">
+        <h2>Selling Authors</h2>
+        <div class="price-box">₹6,999</div>
+        <ul class="features">
+          <li>Book listing</li>
+          <li>Sales dashboard</li>
+          <li>Promotion support</li>
+        </ul>
+        <button class="pay-btn" onclick="pay('plan2')">Pay Now</button>
+      </div>
+
+    </section>
+
+  </div>
+
+  <!-- FULL WIDTH TRUST STRIP -->
+  <div class="payment-trust-strip">
+
+    <div class="payment-inner">
+
+      <div class="secure-text">Secure Payments Powered By</div>
+
+      <div class="payment-logos">
+        <img src="Razorpay.png" alt="Razorpay">
+        <img src="Cashfree.png" alt="Cashfree">
+        <img src="paypal.png" alt="PayPal">
+      </div>
+
+    </div>
+
+  </div>
+
+  <footer>
+    &copy; 2026 AuthorNext. All Rights Reserved.
+  </footer>
+
+  <script>
+    function pay(plan){
+
+      let links = {
+        plan1: "YOUR_CASHFREE_LINK_1",
+        plan2: "YOUR_CASHFREE_LINK_2"
+      };
+
+      window.open(links[plan], "_blank");
+
+      setTimeout(()=>{
+        document.getElementById("successBox").style.display = "block";
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+      }, 4000);
+    }
+  </script>
+
+</body>
+</html>
