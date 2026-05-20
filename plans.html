@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AuthorNext Pricing</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Roboto',sans-serif;
+}
+
+:root{
+    --primary-color:#3a5a40;
+    --secondary-color:#1a1a1a;
+    --accent-color:#6b8c7c;
+    --text-light:#fff;
+    --bg-light:#f5f7f6;
+}
+
+body{
+    background:var(--bg-light);
+    color:#333;
+    line-height:1.6;
+}
+
+/* NAVBAR */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 30px;
+    background:var(--secondary-color);
+    flex-wrap:wrap;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo a{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    text-decoration:none;
+    color:#fff;
+    font-size:2rem;
+    font-weight:800;
+}
+
+.logo img{
+    height:80px;
+    width:120px;
+}
+
+.nav-links{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.nav-links a{
+    color:#fff;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:var(--accent-color);
+}
+
+/* HERO */
+.hero{
+    background:linear-gradient(rgba(26,26,26,0.85), rgba(26,26,26,0.88)), url('https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=1400&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
+    min-height:60vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:40px 20px;
+}
+
+.hero-content{
+    max-width:850px;
+    color:#fff;
+}
+
+.hero h1{
+    font-size:3rem;
+    margin-bottom:20px;
+    line-height:1.25;
+}
+
+.hero p{
+    font-size:1.15rem;
+    color:#ddd;
+    margin-bottom:30px;
+}
+
+.hero button{
+    background:var(--primary-color);
+    color:#fff;
+    border:none;
+    padding:14px 34px;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:1rem;
+    transition:0.3s;
+}
+
+.hero button:hover{
+    background:var(--accent-color);
+    transform:translateY(-3px);
+}
+
+/* PACKAGE SECTION */
+.packages{
+    padding:80px 20px 50px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:2.5rem;
+    color:var(--primary-color);
+    margin-bottom:10px;
+}
+
+.section-title p{
+    color:#555;
+    max-width:700px;
+    margin:auto;
+}
+
+.pricing-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+    max-width:1200px;
+    margin:auto;
+}
+
+.card{
+    background:#fff;
+    border-radius:18px;
+    padding:35px 30px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    transition:0.3s ease;
+    position:relative;
+    overflow:hidden;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 16px 35px rgba(0,0,0,0.12);
+}
+
+.popular{
+    border:2px solid var(--primary-color);
+}
+
+.badge{
+    position:absolute;
+    top:18px;
+    right:18px;
+    background:var(--primary-color);
+    color:#fff;
+    padding:6px 12px;
+    border-radius:50px;
+    font-size:0.75rem;
+    font-weight:700;
+}
+
+.plan-name{
+    font-size:1.6rem;
+    font-weight:800;
+    margin-bottom:10px;
+    color:#111;
+}
+
+.price{
+    font-size:2.6rem;
+    font-weight:900;
+    color:var(--primary-color);
+    margin-bottom:15px;
+}
+
+.price span{
+    font-size:1rem;
+    color:#666;
+    font-weight:400;
+}
+
+.desc{
+    color:#666;
+    margin-bottom:25px;
+}
+
+.card ul{
+    list-style:none;
+    margin-bottom:30px;
+}
+
+.card ul li{
+    padding:12px 0;
+    border-bottom:1px solid #eee;
+}
+
+.card ul li:last-child{
+    border-bottom:none;
+}
+
+.btn{
+    display:block;
+    text-align:center;
+    background:var(--secondary-color);
+    color:#fff;
+    text-decoration:none;
+    padding:14px;
+    border-radius:8px;
+    transition:0.3s;
+    font-weight:700;
+}
+
+.btn:hover{
+    background:var(--primary-color);
+}
+
+/* DETAILED TABLE */
+.detailed-pricing{
+    padding:60px 20px 90px;
+}
+
+.table-wrapper{
+    max-width:1250px;
+    margin:auto;
+    overflow-x:auto;
+    background:#fff;
+    border-radius:18px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th, td{
+    padding:18px;
+    text-align:left;
+    border-bottom:1px solid #eee;
+}
+
+th{
+    background:var(--secondary-color);
+    color:#fff;
+    font-weight:700;
+}
+
+tr:hover{
+    background:#f7faf8;
+}
+
+.price-tag{
+    font-weight:700;
+    color:var(--primary-color);
+}
+
+.note{
+    font-size:13px;
+    color:#777;
+}
+
+/* CTA */
+.cta-section{
+    background:var(--primary-color);
+    color:#fff;
+    text-align:center;
+    padding:70px 20px;
+}
+
+.cta-section h2{
+    font-size:2.3rem;
+    margin-bottom:15px;
+}
+
+.cta-section p{
+    max-width:700px;
+    margin:0 auto 25px;
+    color:#e8e8e8;
+}
+
+.cta-section a{
+    display:inline-block;
+    background:#fff;
+    color:#111;
+    text-decoration:none;
+    padding:14px 32px;
+    border-radius:8px;
+    font-weight:700;
+    transition:0.3s;
+}
+
+.cta-section a:hover{
+    transform:translateY(-3px);
+}
+
+/* FOOTER */
+footer{
+    background:#111;
+    color:#ccc;
+    text-align:center;
+    padding:25px 15px;
+}
+
+footer a{
+    color:#ccc;
+    text-decoration:none;
+    margin:0 10px;
+}
+
+footer a:hover{
+    color:var(--accent-color);
+}
+
+.footer-contact{
+    margin-top:15px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+    nav{
+        flex-direction:column;
+        gap:12px;
+    }
+
+    .hero h1{
+        font-size:2.1rem;
+    }
+
+    .section-title h2{
+        font-size:2rem;
+    }
+
+    th, td{
+        padding:12px;
+        font-size:0.92rem;
+    }
+}
+
+@media(max-width:480px){
+
+    .hero h1{
+        font-size:1.75rem;
+    }
+
+    .hero p{
+        font-size:1rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">
+        <a href="#">
+            <img src="logo.png" alt="AuthorNext Logo">
+            <span>AuthorNext</span>
+        </a>
+    </div>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="info.html#about">About</a>
+        <a href="info.html#services">Services</a>
+        <a href="plans.html">Pricing</a>
+        <a href="info.html#contact">Contact</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Transparent Publishing Services for Serious Authors</h1>
+        <p>
+            From book discussions and ghostwriting support to publishing, formatting, cover design and global distribution — AuthorNext helps transform your ideas into professionally published books.
+        </p>
+
+        <a href="#pricing-packages">
+            <button>View Pricing</button>
+        </a>
+    </div>
+</section>
+
+<section class="packages" id="pricing-packages">
+
+    <div class="section-title">
+        <h2>Publishing Packages</h2>
+        <p>
+            Choose a package that fits your publishing goals. Start simple or go premium with complete author support.
+        </p>
+    </div>
+
+    <div class="pricing-grid">
+
+        <div class="card">
+            <div class="plan-name">Starter</div>
+            <div class="price">₹2,999 <span>/ project</span></div>
+            <div class="desc">
+                Best for first-time authors who want basic publishing assistance.
+            </div>
+
+            <ul>
+                <li>Manuscript Formatting</li>
+                <li>Basic Text Cleanup</li>
+                <li>Amazon Publishing Guidance</li>
+                <li>Basic Cover Placement</li>
+                <li>Email Support</li>
+            </ul>
+
+            <a href="#contact" class="btn">Get Started</a>
+        </div>
+
+        <div class="card popular">
+            <div class="badge">Most Popular</div>
+            <div class="plan-name">Professional</div>
+            <div class="price">₹11,500 <span>/ project</span></div>
+            <div class="desc">
+                Complete publishing assistance with writing, formatting and launch guidance.
+            </div>
+
+            <ul>
+                <li>Ghostwriter Assisted Writing</li>
+                <li>Formatting & Interior Setup</li>
+                <li>Book Cover Design</li>
+                <li>Amazon Publishing Assistance</li>
+                <li>Author Consultation Sessions</li>
+            </ul>
+
+            <a href="#contact" class="btn">Choose Plan</a>
+        </div>
+
+        <div class="card">
+            <div class="plan-name">Premium Branding</div>
+            <div class="price">Custom <span>/ quote</span></div>
+            <div class="desc">
+                For professionals, entrepreneurs and experts building long-term author branding.
+            </div>
+
+            <ul>
+                <li>Everything in Professional</li>
+                <li>Author Branding Strategy</li>
+                <li>Publishing Consultation</li>
+                <li>Platform Positioning</li>
+                <li>Advanced Distribution Guidance</li>
+            </ul>
+
+            <a href="#contact" class="btn">Contact AuthorNext</a>
+        </div>
+
+    </div>
+</section>
+
+<section class="detailed-pricing">
+
+    <div class="section-title">
+        <h2>Detailed Service Pricing</h2>
+        <p>
+            Transparent pricing structure for individual publishing and author support services.
+        </p>
+    </div>
+
+    <div class="table-wrapper">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Sr. No.</th>
+                    <th>Description</th>
+                    <th>India (INR)</th>
+                    <th>International (USD)</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>1</td>
+                    <td>One x One Book Interview / Discussion (45–60 minutes)</td>
+                    <td class="price-tag">₹3,500</td>
+                    <td class="price-tag">$45</td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>Extra Sessions (if required, maximum 3 sessions)</td>
+                    <td class="price-tag">₹1,500 / session</td>
+                    <td class="price-tag">$18 / session</td>
+                </tr>
+
+                <tr>
+                    <td>3</td>
+                    <td>Ghostwriter Assisted Book Writing (up to 200 pages)</td>
+                    <td class="price-tag">₹11,500</td>
+                    <td class="price-tag">$140</td>
+                </tr>
+
+                <tr>
+                    <td>4</td>
+                    <td>Manuscript Formatting + Text Edits (up to 200 pages)</td>
+                    <td class="price-tag">₹1,600</td>
+                    <td class="price-tag">$20</td>
+                </tr>
+
+                <tr>
+                    <td>5</td>
+                    <td>ISBN Application Guidance & Processing Assistance</td>
+                    <td class="price-tag">Included / Actual Cost</td>
+                    <td class="price-tag">Included / Actual Cost</td>
+                </tr>
+
+                <tr>
+                    <td>6</td>
+                    <td>
+                        100% Author Earnings Retained on Book Sales
+                        <br>
+                        <span class="note">(Taxes & advertising costs separate)</span>
+                    </td>
+                    <td class="price-tag">Included</td>
+                    <td class="price-tag">Included</td>
+                </tr>
+
+                <tr>
+                    <td>7</td>
+                    <td>Professional Book Cover Graphic Design</td>
+                    <td class="price-tag">₹1,400</td>
+                    <td class="price-tag">$18</td>
+                </tr>
+
+                <tr>
+                    <td>8</td>
+                    <td>Publishing Assistance on Amazon Kindle Direct Publishing</td>
+                    <td class="price-tag">FREE</td>
+                    <td class="price-tag">FREE</td>
+                </tr>
+
+                <tr>
+                    <td>9</td>
+                    <td>Advanced Publishing & Branding Consultation</td>
+                    <td class="price-tag">₹24,000</td>
+                    <td class="price-tag">$290</td>
+                </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+</section>
+
+<section class="cta-section" id="contact">
+    <h2>Your Book Deserves Professional Execution</h2>
+
+    <p>
+        Whether you are a first-time author, entrepreneur, coach or expert — AuthorNext helps transform your knowledge into a professionally published book with clarity and confidence.
+    </p>
+
+    <a href="mailto:hello@authornext.in">Contact AuthorNext</a>
+
+    <div style="max-width:600px; margin:45px auto 0; background:rgba(255,255,255,0.08); padding:35px; border-radius:18px; backdrop-filter:blur(8px);">
+
+        <form>
+
+            <div style="margin-bottom:18px; text-align:left;">
+                <label style="display:block; margin-bottom:8px; font-weight:500;">Your Name </label>
+                <input type="text" placeholder="Enter your name"
+                style="width:100%; padding:14px; border:none; border-radius:8px; font-size:1rem; outline:none;">
+            </div>
+
+            <div style="margin-bottom:18px; text-align:left;">
+                <label style="display:block; margin-bottom:8px; font-weight:500;">Phone Number *</label>
+                <input type="tel" placeholder="Enter your phone number" required
+                style="width:100%; padding:14px; border:none; border-radius:8px; font-size:1rem; outline:none;">
+            </div>
+
+            <div style="margin-bottom:24px; text-align:left;">
+                <label style="display:block; margin-bottom:8px; font-weight:500;">Email Address (Optional)</label>
+                <input type="email" placeholder="Enter your email address"
+                style="width:100%; padding:14px; border:none; border-radius:8px; font-size:1rem; outline:none;">
+            </div>
+
+            <button type="submit"
+            style="width:100%; background:#111; color:#fff; border:none; padding:15px; border-radius:8px; font-size:1rem; font-weight:700; cursor:pointer; transition:0.3s;">
+                Submit Details
+            </button>
+
+        </form>
+
+    </div>
+</section>
+
+<footer>
+    &copy; 2026 AuthorNext. All Rights Reserved. AuthorNext is a brand operated by Sujit Trading <br><br>
+
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms</a>
+    <a href="refund.html">Refund Policy</a>
+
+    <div class="footer-contact">
+        Call : +91 9347984431 &nbsp;&nbsp; || &nbsp;&nbsp;
+        Email: hello@authornext.in
+    </div>
+</footer>
+
+</body>
+</html>
